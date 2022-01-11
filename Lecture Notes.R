@@ -27,7 +27,7 @@ beta.hat <- ols(Y,X) # same OLS estimator, but can call back to it now
 # can have multiple outputs for functions as a list
 ols <- function(Y,X){
   b<- solve(crossprod(X), crossprod(X,Y)) # coefficient estimates
-  y.hat <- x*%*b # fitted values
+  y.hat <- x%*%b # fitted values
   out <- list(coef.estimates = b, fitted.values = y.hat)
   return(out)
 }
